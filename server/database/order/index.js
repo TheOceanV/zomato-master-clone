@@ -1,9 +1,9 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const OrderSchema = new mongoose.Schema(
    {
     user: {
-        type: mongooose.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: "Users",
     },
     orderDetails: [
