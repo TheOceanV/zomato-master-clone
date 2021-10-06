@@ -9,6 +9,9 @@ const Router = express.Router();
 // Models
 import { UserModel } from "../../database/user";
 
+// validation
+import { ValidateSignup, ValidateSignin } from "../../Validation/auth";
+
 /*
 Route   /signup
 Des     Register New User
@@ -18,6 +21,8 @@ Method  POST
 */
 Router.post("/signup", async (req, res) => {
     try { 
+     await ValidateSignup(req.body.credentials); 
+
      await UserModel.findByEmailAndPhone(req.body.credentials);
      const newUser = await UserModel.create(req.body.credentials);
      const token = newUser.generateJwtToken();
@@ -36,6 +41,8 @@ Method  POST
 */
 Router.post("/signin", async (req, res) => {
   try { 
+   await ValidateSignin(req.body.credentials); 
+
    const user = await UserModel.findByEmailAndPassword(req.body.credentials);
 
    const token = user.generateJwtToken();
