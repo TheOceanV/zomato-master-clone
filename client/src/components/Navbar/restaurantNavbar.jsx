@@ -11,10 +11,10 @@ import { useSelector } from "react-redux";
 import SignIn from "../Auth/SignIn";
 import SignUp from "../Auth/SignUp";
 const MobileNav = ({ SignIn, SignUp }) => {
-const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-const reduxState = useSelector((global) => global.user.user);
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  const reduxState = useSelector((global) => global.user.user);
 
-return (
+  return (
     <div className="flex w-full items-center justify-between lg:hidden">
       <AiOutlineArrowLeft />
       <div className="w-28">
@@ -158,8 +158,8 @@ const Navbar = () => {
       <SignIn isOpen={openSignin} setIsOpen={setOpenSignin} />
       <SignUp isOpen={openSignup} setIsOpen={setOpenSignup} />
       <nav className="p-4 flex bg-white shadow-md lg:shadow-none w-full items-center">
-      <MobileNav SignIn={openSignInmodal} SignUp={openSignUpmodal} />
-      <LargeNav SignIn={openSignInmodal} SignUp={openSignUpmodal} />
+        <MobileNav SignIn={openSignInmodal} SignUp={openSignUpmodal} />
+        <LargeNav SignIn={openSignInmodal} SignUp={openSignUpmodal} />
       </nav>
     </>
   );

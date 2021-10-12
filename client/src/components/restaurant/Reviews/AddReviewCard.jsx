@@ -13,7 +13,7 @@ const AddReviewCard = () => {
 
     setIsOpen(true);
   };
-    return (
+  return (
     <>
       <ReviewModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <h3 className="text-xl font-medium">Rate your experience for</h3>

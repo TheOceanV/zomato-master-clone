@@ -6,23 +6,23 @@ import { useSelector, useDispatch } from "react-redux";
 import ReactStars from "react-rating-stars-component";
 
 // components
-import MenuCollection from "../../components/restaurant/MenuCollection";
-import MenuSimilarRestaurantcard from "../../components/restaurant/MenuSimilarRestaurantCard";
-import { NextArrow, PrevArrow } from "../../components/CarousalArrow";
-import ReviewCard from "../../components/restaurant/Reviews/reviewCard";
-import Mapview from "../../components/restaurant/Mapview";
+import MenuCollection from "../../Components/restaurant/MenuCollection";
+import MenuSimilarRestaurantcard from "../../Components/restaurant/MenuSimilarRestaurantCard";
+import { NextArrow, PrevArrow } from "../../Components/CarousalArrow";
+import ReviewCard from "../../Components/restaurant/Reviews/reviewCard";
+import Mapview from "../../Components/restaurant/Mapview";
 
 import { getImage } from "../../Redux/Reducer/Image/Image.action";
 import { getReviews } from "../../Redux/Reducer/Reviews/review.action";
 
 const Overview = () => {
   const [menuImage, setMenuImages] = useState({ images: [] });
-  const [Reviews, setReviews] = useState([]);
+  const [Reviews, setReviewss] = useState([]);
 
   const { id } = useParams();
 
   const settings = {
-    DOMStringList: true,
+    dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 4,
@@ -71,8 +71,8 @@ const Overview = () => {
         setMenuImages(images);
       });
       dispatch(getReviews(reduxState?._id)).then((data) =>
-      setReviews(data.payload.reviews)
-     );
+        setReviewss(data.payload.reviews)
+      );
     }
   }, []);
 
@@ -100,11 +100,11 @@ const Overview = () => {
             </Link>
           </div>
           <div className="flex flex-wrap gap-3 my-4">
-          <MenuCollection menuTitle="Menu" pages="3" image={menuImage} />
+            <MenuCollection menuTitle="Menu" pages="3" image={menuImage} />
           </div>
           <h4 className="text-lg font-medium my-4">Cuisines</h4>
           <div className="flex flex-wrap gap-2">
-          {reduxState?.cuisine.map((data) => (
+            {reduxState?.cuisine.map((data) => (
               <span className="border border-gray-600 text-blue-600 px-2 py-1 rounded-full">
                 {data}
               </span>
@@ -154,7 +154,7 @@ const Overview = () => {
               size={24}
               activeColor="#ffd700"
             />
-             {Reviews.map((reviewData) => (
+            {Reviews.map((reviewData) => (
               <ReviewCard {...reviewData} />
             ))}
           </div>
@@ -177,7 +177,7 @@ const Overview = () => {
             title={reduxState?.name}
             phno={`+91${reduxState?.contactNumber}`}
             mapLocation={getLatLong(reduxState?.mapLocation)}
-            address={reduxState?.address}          
+            address={reduxState?.address}
           />
         </aside>
       </div>

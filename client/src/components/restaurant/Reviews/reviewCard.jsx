@@ -10,7 +10,7 @@ const ReviewCard = (props) => {
 
   useEffect(() => {
     dispatch(getUser(props.user)).then((data) =>
-    setUser(data.payload.user.fullname)
+      setUser(data.payload.user.fullname)
     );
   }, []);
 
@@ -27,7 +27,7 @@ const ReviewCard = (props) => {
               />
             </div>
             <div className="flex flex-col">
-            <h3 className="text-lg font-semibold">{user}</h3>
+              <h3 className="text-lg font-semibold">{user}</h3>
               <small className="text-gray-500">
                 5 Reviews &#8226; 3 Followers
               </small>
@@ -48,7 +48,7 @@ const ReviewCard = (props) => {
             <small className="text-gray-500">
               {dayjs(props.createdAt).format("DD MMM YYYY")}
             </small>
-           </div>
+          </div>
           <div className="w-full">
             <p className="w-full text-gray-600 font-light text-base">
               {props.reviewText}

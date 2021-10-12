@@ -55,7 +55,7 @@ Router.get("/:_id", async (req, res) => {
   Access    Public
   Method    GET  
   */
-  Router.get("/c/:category", async (req, res) => {
+  Router.get("/r/:category", async (req, res) => {
     try {
       await Validatecategory(req.params);
       

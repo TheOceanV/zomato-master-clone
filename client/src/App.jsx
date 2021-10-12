@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import React, { useEffect } from "react";
 
 // HOC
-import HomeLayoutHOC from "./HOC/home.hoc";
+import HomeLayoutHOC from "./HOC/Home.Hoc";
 import RestaurantLayoutHOC from "./HOC/Restaurant.HOC";
 import CheckoutLayoutHOC from "./HOC/Checkout.Hoc";
 
@@ -32,8 +32,8 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     if (localStorage.zomatoUser) dispatch(getMyself());
-  },  []);
-  
+  }, []);
+
   return (
     <>
       <Route path="/" exact>
@@ -41,7 +41,7 @@ function App() {
       </Route>
       <Route path="/restaurant/:id" exact component={RedirectRestaurant} />
 
-      <HomeLayoutHOC path="/:type" exact component={Home} />    
+      <HomeLayoutHOC path="/:type" exact component={Home} />
 
       <HomeLayoutHOC path="/google/:token" exact component={GoogleAuth} />
       <RestaurantLayoutHOC

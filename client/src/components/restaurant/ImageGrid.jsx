@@ -7,7 +7,7 @@ const ImageGrid = (props) => {
       <div className="w-full h-60 md:hidden">
         <img
           src={props.images.length && props.images[0].location}
-          alt="restaurant image"
+          alt="restuarant image"
           className="w-full h-full object-cover rounded-lg "
         />
       </div>
@@ -15,27 +15,27 @@ const ImageGrid = (props) => {
         <div className="w-full h-full overflow-hidden">
           <img
             src={props.images.length && props.images[0].location}
-            alt="restaurant image"
+            alt="restuarant image"
             className="w-full h-full object-cover rounded-lg transform transition duration-700 hover:scale-110"
           />
         </div>
         <div className="w-1/4 h-full flex flex-col gap-1 overflow-hidden">
           <img
             src={props.images.length >= 1 && props.images[1].location}
-            alt="restaurant image"
+            alt="restuarant image"
             className="w-full h-2/4 object-cover rounded-lg  transform transition duration-700 hover:scale-110"
           />
           <img
             src={props.images.length >= 2 && props.images[2].location}
-            alt="restaurant image"
+            alt="restuarant image"
             className="w-full h-2/4 object-cover rounded-lg  transform transition duration-700 hover:scale-110"
           />
         </div>
         <div className="w-1/4 h-full flex flex-col gap-1 overflow-hidden">
-        <div className="w-full h-2/4 relative ">
+          <div className="w-full h-2/4 relative ">
             <img
-              src={props.images[3]}
-              alt="restaurant image"
+              src={props.images.length >= 3 && props.images[3].location}
+              alt="restuarant image"
               className="w-full h-full object-cover rounded-lg "
             />
             <div className="absolute inset-0 bg-opacity-40 bg-black w-full h-full rounded-lg " />
@@ -46,7 +46,7 @@ const ImageGrid = (props) => {
           <div className="w-full h-2/4 relative ">
             <img
               src={props.images.length >= 4 && props.images[4].location}
-              alt="restaurant image"
+              alt="restuarant image"
               className="w-full h-full object-cover rounded-lg "
             />
             <div className="absolute inset-0 bg-opacity-90 bg-gray-400 w-full h-full rounded-lg " />

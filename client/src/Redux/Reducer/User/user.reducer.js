@@ -11,14 +11,14 @@ const UserReducer = (state = INITIAL_STATE, action) => {
         ...state,
       };
 
-      case SELF:
+    case SELF:
       return {
         ...state,
         user: action.payload,
       };
-
-      case CLEAR_USER:
-        return{};
+      
+    case CLEAR_USER:
+      return {};
 
     default:
       return {

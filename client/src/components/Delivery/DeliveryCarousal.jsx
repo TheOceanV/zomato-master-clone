@@ -10,7 +10,7 @@ const DeliveryCarousal = () => {
     {
       image:
         "https://b.zmtcdn.com/data/homepage_dish_data/4/76d788a2600b609bb0a08443e03df95b.png",
-      title: "biryani",
+      title: "Biryani",
     },
     {
       image:

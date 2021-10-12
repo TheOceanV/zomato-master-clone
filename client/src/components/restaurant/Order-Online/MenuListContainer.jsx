@@ -11,7 +11,8 @@ const MenuListContainer = (props) => {
           name={props.name}
           items={props.items}
           onClickHandler={props.onClickHandler}
-          isActive={props.selected === props.name}        />
+          isActive={props.selected === props.name}
+        />
       </div>
     </>
   );

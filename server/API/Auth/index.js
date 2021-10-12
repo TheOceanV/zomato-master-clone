@@ -4,13 +4,13 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import passport from "passport";
 
-const Router = express.Router();
-
 // Models
 import { UserModel } from "../../database/user";
 
 // validation
 import { ValidateSignup, ValidateSignin } from "../../Validation/auth";
+
+const Router = express.Router();
 
 /*
 Route   /signup

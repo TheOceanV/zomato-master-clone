@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 // components
-import ReviewCard from "../../components/restaurant/Reviews/reviewCard";
-import AddReviewCard from "../../components/restaurant/Reviews/AddReviewCard";
+import ReviewCard from "../../Components/restaurant/Reviews/reviewCard";
+import AddReviewCard from "../../Components/restaurant/Reviews/AddReviewCard";
 
 import { getReviews } from "../../Redux/Reducer/Reviews/review.action";
 

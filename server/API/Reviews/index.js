@@ -33,36 +33,36 @@ Access  Public
 Method  POST
 */
 Router.post("/new", passport.authenticate("jwt"), async (req, res) => {
-    try {
-      const { _id } = req.session.passport.user._doc;
-      const { reviewData } = req.body;
-      
-      await ReviewModel.create({ ...reviewData, user: _id });
+  try {
+    const { _id } = req.session.passport.user._doc;
+    const { reviewData } = req.body;
 
-      return res.json({ review: "Successfully created review" });
-    } catch (error) {
-      return res.status(500).json({ error: error.message });          
-    }
+    await ReviewModel.create({ ...reviewData, user: _id });
+
+    return res.json({ review: "Sucessfully Created Review." });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
 });
 
-/*
-Route   /delete
-Des     delete review
-Params  _id
-Access  Public
-Method  DELETE
+	/*
+Route     /delete
+Des       Add new food review/rating
+Params    _id
+BODY      none
+Access    Public
+Method    DELETE  
 */
 Router.delete("/delete/:_id", async (req, res) => {
-    try {
-      const { _id } = req.params;
+  try {
+    const { _id } = req.params;
 
-      await ReviewModel.findByIdAndDelete(_id);
+    await ReviewModel.findByIdAndDelete(_id);
 
-      return res.json({ review: "Successfully deleted review" });
-    } catch (error) {
-      return res.status(500).json({ error: error.message });          
-    }
+    return res.json({ review: "Sucessfully Deleted the Review."});
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
 });
-
 
 export default Router;

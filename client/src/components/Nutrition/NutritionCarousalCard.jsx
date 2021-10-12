@@ -23,9 +23,9 @@ const NutritionCard = ({ image, title }) => {
 
 const NutritionCarousalCard = (props) => {
   return (
-  <>
-    <NutritionCard {...props} />
-  </>
+    <>
+      <NutritionCard {...props} />
+    </>
   );
 };
 

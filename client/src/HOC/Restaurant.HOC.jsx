@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 // Layout
-import RestaurantLayout from "../layout/Restaurant.layout";
+import RestaurantLayout from "../Layout/Restaurant.layout";
 
 const RestaurantLayoutHOC = ({ component: Component, ...rest }) => {
   return (

@@ -74,7 +74,7 @@ export default function SignUp({ isOpen, setIsOpen }) {
                   className="text-lg font-medium leading-6 text-gray-900"
                 ></Dialog.Title>
                 <div className="mt-2 flex flex-col gap-3 w-full">
-                <button
+                  <button
                     onClick={googlesignin}
                     className="py-2 justify-center rounded-lg flex items-center gap-2 w-full border border-gray-400 bg-white text-gray-700 hover:bg-gray-100"
                   >

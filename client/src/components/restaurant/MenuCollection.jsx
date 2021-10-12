@@ -9,7 +9,7 @@ const MenuCollection = (props) => {
 
   return (
     <>
-        {isMenuOpen && (
+      {isMenuOpen && (
         <ImageViewer
           src={props.image}
           currentIndex={CurrentImg}
@@ -20,8 +20,8 @@ const MenuCollection = (props) => {
       <div
         className="w-32 h-32 md:w-48 flex flex-col md:h-48"
         onClick={openViewer}
-      >        
-      <div className="w-full h-full overflow-hidden  rounded-lg">
+      >
+        <div className="w-full h-full overflow-hidden  rounded-lg">
           <img
             src={props.image[0]}
             alt="menu"

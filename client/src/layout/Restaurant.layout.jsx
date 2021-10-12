@@ -6,19 +6,18 @@ import { RiDirectionLine, RiShareForwardLine } from "react-icons/ri";
 import { BiBookmarkPlus } from "react-icons/bi";
 
 // components
-import RestaurantNavbar from "../components/Navbar/restaurantNavbar";
-import ImageGrid from "../components/restaurant/ImageGrid";
-import InfoButtons from "../components/restaurant/InfoButtons";
-import RestaurantInfo from "../components/restaurant/RestaurantInfo";
-import TabContainer from "../components/restaurant/Tabs";
-import CartContainer from "../components/Cart/CartContainer";
+import RestaurantNavbar from "../Components/Navbar/restaurantNavbar";
+import ImageGrid from "../Components/restaurant/ImageGrid";
+import InfoButtons from "../Components/restaurant/InfoButtons";
+import RestaurantInfo from "../Components/restaurant/RestaurantInfo";
+import TabContainer from "../Components/restaurant/Tabs";
+import CartContainer from "../Components/Cart/CartContainer";
 
 // Redux actions
 import { getSpecificRestaurant } from "../Redux/Reducer/restaurant/restaurant.action";
 import { getImage } from "../Redux/Reducer/Image/Image.action";
-
 const RestaurantLayout = (props) => {
-   const [restaurant, setRestaurant] = useState({
+  const [restaurant, setRestaurant] = useState({
     images: [],
     name: "",
     cuising: "",
@@ -45,14 +44,14 @@ const RestaurantLayout = (props) => {
       {" "}
       <RestaurantNavbar />
       <div className="container mx-auto px-4 lg:px-20 pb-10 ">
-      <ImageGrid images={restaurant.images} />
-      <RestaurantInfo
+        <ImageGrid images={restaurant.images} />
+        <RestaurantInfo
           name={restaurant?.name}
           restaurantRating={restaurant?.rating || 0}
           deliveryRating={restaurant?.rating || 0}
           cuisine={restaurant?.cuising}
-          address={restaurant?.address}        
-      />
+          address={restaurant?.address}
+        />
         <div className="my-4 flex flex-wrap gap-3">
           <InfoButtons isActive>
             <TiStarOutline /> Add Review

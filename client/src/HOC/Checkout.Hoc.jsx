@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 // Layout
-import CheckoutLayout from "../layout/Checkout.layout";
+import CheckoutLayout from "../Layout/Checkout.layout";
 
 const CheckoutLayoutHOC = ({ component: Component, ...rest }) => {
   return (

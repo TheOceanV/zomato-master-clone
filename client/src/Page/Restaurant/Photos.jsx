@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import ImageViewer from "react-simple-image-viewer";
 
 // components
-import PhotoCollection from "../../components/restaurant/PhotosCollection";
+import PhotoCollection from "../../Components/restaurant/PhotosCollection";
 // redux actions
 import { getImage } from "../../Redux/Reducer/Image/Image.action";
 

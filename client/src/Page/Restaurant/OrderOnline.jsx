@@ -4,9 +4,9 @@ import { AiOutlineCompass } from "react-icons/ai";
 import { BiTimeFive } from "react-icons/bi";
 
 // components
-import FloatMenuBtn from "../../components/restaurant/Order-Online/FloatMenuBtn";
-import MenuListContainer from "../../components/restaurant/Order-Online/MenuListContainer";
-import FoodList from "../../components/restaurant/Order-Online/FoodList";
+import FloatMenuBtn from "../../Components/restaurant/Order-Online/FloatMenuBtn";
+import MenuListContainer from "../../Components/restaurant/Order-Online/MenuListContainer";
+import FoodList from "../../Components/restaurant/Order-Online/FoodList";
 
 // redux actions
 import { getFoodList } from "../../Redux/Reducer/Food/Food.action";
@@ -30,15 +30,16 @@ const OrderOnline = () => {
   useEffect(() => {
     reduxState &&
       dispatch(getFoodList(reduxState.menu)).then((data) =>
-        setMenu(data.payload.menus.menu)
+        // setMenu(data.payload.menus.menus)
+        console.log()
       );
   }, [reduxState]);
 
-  return (
+   return (
     <>
-      <div className="w-full h-screen flex">
+      <div className="w-full h-screen flex ">
         <aside className="hidden md:flex flex-col gap-3 border-r overflow-y-scroll border-gray-200 h-screen w-1/4">
-        {menu.map((item) => (
+          {menu.map((item) => (
             <MenuListContainer
               {...item}
               key={item._id}
@@ -55,12 +56,12 @@ const OrderOnline = () => {
             </h4>
           </div>
           <section className="flex  h-screen overflow-y-scroll flex-col gap-3 md:gap-5">
-          {menu.map((item) => (
+            {menu.map((item) => (
               <FoodList key={item._id} {...item} />
             ))}
           </section>
         </div>
-    </div>      
+      </div>
       <FloatMenuBtn />
     </>
   );

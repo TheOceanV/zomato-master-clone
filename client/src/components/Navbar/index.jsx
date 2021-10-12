@@ -21,7 +21,7 @@ const MobileNav = ({ SignIn, SignUp }) => {
 
   const signOutHandler = () => dispatch(signOut());
 
-return (
+  return (
     <div className="flex w-full items-center justify-between lg:hidden">
       <div className="w-28">
         <img
@@ -147,9 +147,9 @@ const LargeNav = ({ SignIn, SignUp }) => {
               </button>
             </div>
           )}
+        </div>
       </div>
-    </div>
-   </>
+    </>
   );
 };
 
@@ -165,8 +165,8 @@ const Navbar = () => {
       <SignUp isOpen={openSignup} setIsOpen={setOpenSignup} />
 
       <nav className="p-4 flex bg-white shadow-md lg:shadow-none w-full items-center">
-      <MobileNav SignIn={openSignInmodal} SignUp={openSignUpmodal} />
-      <LargeNav SignIn={openSignInmodal} SignUp={openSignUpmodal} />      
+        <MobileNav SignIn={openSignInmodal} SignUp={openSignUpmodal} />
+        <LargeNav SignIn={openSignInmodal} SignUp={openSignUpmodal} />
       </nav>
     </>
   );

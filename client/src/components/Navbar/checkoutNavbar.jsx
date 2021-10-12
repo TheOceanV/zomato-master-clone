@@ -21,14 +21,14 @@ const Navbar = () => {
               />
             </div>
             <div className="flex items-center gap-3">
-            <div className="border p-2 border-gray-300 text-zomato-400 w-20 h-20 rounded-full">
+              <div className="border p-2 border-gray-300 text-zomato-400 w-20 h-20 rounded-full">
                 <img
                   src={gravatar.url(reduxState?.user?.email)}
                   alt={reduxState?.user?.email}
                   className="w-full h-full rounded-full object-cover"
                 />
               </div>
-              {reduxState?.user?.fullname}            
+              {reduxState?.user?.fullname}
             </div>
           </div>
         </div>

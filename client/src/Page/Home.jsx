@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 // components
-import Delivery from "../components/Delivery";
-import Dining from "../components/Dining";
-import NightLife from "../components/NightLife";
-import Nutrition from "../components/Nutrition";
+import Delivery from "../Components/Delivery";
+import Dining from "../Components/Dining";
+import NightLife from "../Components/NightLife";
+import Nutrition from "../Components/Nutrition";
 
 // redux actions
 import { getRestaurant } from "../Redux/Reducer/restaurant/restaurant.action";
@@ -18,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(getRestaurant());
   }, []);
-    return (
+  return (
     <div className="my-5">
       {type === "delivery" && <Delivery />}
       {type === "dining" && <Dining />}
