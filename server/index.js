@@ -16,9 +16,9 @@ import Auth from "./API/Auth";
 import Restaurant from "./API/Restaurant";
 import Food from "./API/Food";
 import Menu from "./API/Menu";
-import Image from "./API/image";
-import Order from "./API/Orders";
-import Review from "./API/Reviews";
+import Image from "./API/Image";
+import Order from "./API/orders";
+import Reviews from "./API/reviews";
 import User from "./API/User";
 import Payments from "./API/Payments";
 
@@ -47,7 +47,7 @@ zomato.use("/food", Food);
 zomato.use("/menu", Menu);
 zomato.use("/image", Image);
 zomato.use("/order", Order);
-zomato.use("/reviews", Review);
+zomato.use("/reviews", Reviews);
 zomato.use("/user", User);
 zomato.use("/payments", Payments);
 
